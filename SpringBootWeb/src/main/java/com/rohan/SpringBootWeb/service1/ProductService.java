@@ -12,7 +12,8 @@ public class ProductService {
     List<ProductModel> p = Arrays.asList(
             new ProductModel(101, "Iphone", 5000),
             new ProductModel(102, "Samsung", 1000),
-            new ProductModel(103,"Apple",3000)
+            new ProductModel(103,"Apple",3000),
+            new ProductModel(103,"Vivo",4000)
     ); 
     
     public List<ProductModel> getProduct() {
