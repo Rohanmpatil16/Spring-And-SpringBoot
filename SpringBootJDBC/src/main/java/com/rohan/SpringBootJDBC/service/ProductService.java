@@ -1,6 +1,9 @@
 package com.rohan.SpringBootJDBC.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
@@ -22,5 +25,13 @@ public class ProductService {
 		
 	}
 	
-	
+	public List<ProductRepository> getProducts() {
+
+        String sql = "SELECT * FROM product";
+
+        return temp.query(
+                sql,
+                new BeanPropertyRowMapper<>(ProductRepository.class)
+        );
+    }
 }
