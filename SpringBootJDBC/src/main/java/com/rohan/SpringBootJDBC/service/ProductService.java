@@ -34,4 +34,12 @@ public class ProductService {
                 new BeanPropertyRowMapper<>(ProductRepository.class)
         );
     }
+	
+	public ProductRepository getProductById(int id)
+	{
+		String sql="select * from product where id=?";
+				
+				return temp.queryForObject(sql, new BeanPropertyRowMapper<>(ProductRepository.class),id);
+		
+	}
 }
