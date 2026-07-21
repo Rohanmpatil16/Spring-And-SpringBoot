@@ -1,0 +1,1 @@
+A collection of Spring Framework and Spring Boot projects developed while learning Java backend development. This repository covers Spring Core, Spring Boot, JDBC, Hibernate, JPA, Spring Security, and BCrypt with practical examples and CRUD applications.
