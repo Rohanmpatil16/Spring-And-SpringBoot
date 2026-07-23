@@ -6,46 +6,41 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.LibraryManagementSys.entity.Book;
-import com.example.LibraryManagementSys.repoitory.BookRepository;
+import com.example.LibraryManagementSys.repository.BookRepository;
 
 @Service
 public class BookService {
 
-	@Autowired
-	BookRepository repo;
-	
-	public Book addBook(Book book) {
-		return repo.save(book);
-		
-	}
-	
-	public List<Book> getAllBooks()
-	{
-		return repo.findAll();
-	}
-	
-	public Book getBook(int id)
-	{
-		return repo.findById(id).orElse(null);
-	}
-	
-	public Book updateBook(Book book)
-	{
-		return repo.save(book);
-	}
-	
-	public String deleteBook(int id)
-	{
-		repo.deleteById(id);
-		return "Book Deleted Successfully";
-	}
-	
-	public List<Book> searchByAuthor(String author) {
-        return repo.findbyAuthor(author);
+    @Autowired
+    private BookRepository repo;
+
+    public Book addBook(Book book) {
+        return repo.save(book);
+    }
+
+    public List<Book> getAllBooks() {
+        return repo.findAll();
+    }
+
+    public Book getBook(int id) {
+        return repo.findById(id).orElse(null);
+    }
+
+    public Book updateBook(Book book) {
+        return repo.save(book);
+    }
+
+    public String deleteBook(int id) {
+        repo.deleteById(id);
+        return "Book Deleted Successfully";
+    }
+
+    public List<Book> searchByAuthor(String author) {
+        return repo.findByAuthor(author);
     }
 
     public List<Book> searchByCategory(String category) {
-        return repo.findbyCategory(category);
+        return repo.findByCategory(category);
     }
 
     public List<Book> searchByTitle(String title) {
